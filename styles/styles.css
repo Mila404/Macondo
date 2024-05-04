@@ -1,0 +1,1490 @@
+/* -------Estructura de CSS------- */
+/* 
+    - Reset
+    - Estilos Globales
+        - Fuentes tipográficas
+        - Tamaños (font-size)
+        - Colores
+        - Estilos (h1, h2, h3, p, a, li, button)
+    - Bloques (header, main, footer, form)*/
+
+/* //////////////////////////////////////////// RESET //////////////////////////////////////////// */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    min-width: 0;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* //////////////////////////////////////////// ESTILOS ////////////////////////////////////////////  */
+
+/* Fuentes */
+
+/* Tipografía del branding / Títulos */
+@font-face {
+    font-family: Enhance Learning;
+    src: url(../assets/fonts/enhance-learning/ENHANCE-LEARNING-DEMO-BF65fd64b0bddee.otf) format('embedded-opentype'),
+        url(../assets/fonts/enhance-learning/ENHANCE-LEARNING-DEMO-BF65fd64b11303a.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Tipografía del branding / Textos + variable (light)*/
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/montserrat/Montserrat-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Tamaños (font size) */
+:root {
+    --h1: clamp(2.5rem, 1.8478rem + 3.2609vi, 4.375rem);
+    --h2: clamp(1.8rem, 1.5565rem + 1.2174vi, 2.5rem);
+    --h3: clamp(2.5rem, 1.1957rem + 6.5217vi, 6.25rem);
+    --textos-legales: clamp(0.75rem, 0.7065rem + 0.2174vi, 0.875rem);
+    --parrafo: clamp(0.875rem, 0.8315rem + 0.2174vi, 1rem);
+}
+
+/* Colores */
+:root {
+    /* Color del branding / predominante */
+    --negro: #262222;
+    /* Color del branding / secundario */
+    --rojo: #e62f32;
+    /* Color para resaltar un contenido del fondo */
+    --gris: #F5F5F5;
+    /* Color degradado del fondo */
+    --fondo: linear-gradient(180deg, rgba(255, 252, 249, 1) 63%, rgba(243, 240, 237, 1) 91%);
+}
+
+/* Estilos */
+body {
+    background: var(--fondo);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* Define tres filas: 10% para header, espacio para main, y 10% para footer */
+    height: 100vh;
+    /* Utiliza el 100% de la altura de la ventana del navegador */
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: Enhance Learning;
+    font-size: var(--h1);
+    color: var(--negro);
+    line-height: 4rem;
+    letter-spacing: .2rem;
+    margin: 0;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: var(--h2);
+    font-weight: 300;
+    color: var(--negro);
+    margin: .5rem;
+}
+
+h3 {
+    font-family: Enhance Learning;
+    font-size: var(--h3);
+    color: var(--negro);
+    line-height: 7rem;
+    letter-spacing: .2rem;
+    margin: 0;
+}
+
+li {
+    font-family: Montserrat;
+    font-size: var(--textos-legales);
+    color: var(--negro);
+}
+
+p {
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    color: var(--negro);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+/* Estilos - Botones y enlaces*/
+a {
+    font-family: Montserrat;
+    color: var(--negro);
+    text-decoration: none;
+    font-size: var(--parrafo);
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--rojo);
+    cursor: pointer;
+}
+
+button {
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    background-color: transparent;
+    border: none;
+    padding-inline: 3em;
+    padding-block: .5em;
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////// I N D E X - M A C O N D O //////////////////////////////////////////// */
+
+/* ---------- Header ---------- */
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 5%;
+}
+
+.Header__nav {
+    display: none;
+}
+
+.Header__ul {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* ---------- Main ---------- */
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---- Bloque de texto ---- */
+.Main__article {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.Main__text {
+    position: relative;
+    z-index: 1;
+}
+
+.Main__p {
+    margin: 2% 0 8%;
+}
+
+/* ---- Estilo en textos / desequilibrio ---- */
+.espacio--negativo {
+    margin: 0 0 0 -5rem;
+}
+
+.espacio--positivo {
+    padding: 0 0 0 5rem;
+    margin: -.5rem 0 0;
+}
+
+.espacio--positivo--doble {
+    padding: 0 0 0 4rem;
+    margin: -.5rem 0 0;
+}
+
+/* ---- Botones ---- */
+.Main__btns {
+    margin: 2rem 0;
+}
+
+.Main__btns button {
+    margin: .5rem;
+}
+
+.Main__btn__a {
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    background-color: transparent;
+    border: thin solid var(--negro);
+    padding-inline: 3em;
+    padding-block: .5em;
+}
+
+.Main__btn__a:hover {
+    background-color: var(--negro);
+    color: var(--gris);
+}
+
+/* ---- Imágenes decorativas ---- */
+.Main__img {
+    position: absolute;
+}
+
+.Main__img__recetas {
+    position: absolute;
+}
+
+/* ---- Punto rojo ---- */
+.Main__h1::after {
+    content: "𒊹";
+    position: absolute;
+    top: 0;
+    left: 95%;
+    color: var(--rojo);
+}
+
+.Main__h1--recetario::after {
+    content: "𒊹";
+    position: absolute;
+    top: 7%;
+    right: 2rem;
+    color: var(--rojo);
+    z-index: 2;
+}
+
+.bolita::after {
+    content: "𒊹";
+    position: absolute;
+    top: -2rem;
+    right: 3rem;
+    color: var(--rojo);
+    z-index: -1;
+    font-size: 5rem;
+}
+
+.bolita-aviso::after {
+    content: "𒊹";
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: var(--rojo);
+    z-index: -1;
+    font-size: 5rem;
+}
+
+.Main__h1--bolita__news::after {
+    content: "𒊹";
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    color: var(--rojo);
+    z-index: -1;
+    font-size: 5rem;
+}
+
+/* ---------- Imágenes decorativas (especias y frutas) / Ubicación ---------- */
+.toronja {
+    right: -9rem;
+    top: -8rem;
+}
+
+.tomillo {
+    left: -8rem;
+    bottom: -5rem;
+    transform: scaleX(-1);
+    z-index: 0;
+}
+
+.limon {
+    right: -6rem;
+    top: -2rem;
+}
+
+.menta {
+    left: -4rem;
+    bottom: -2rem;
+    transform: rotate(90deg);
+    z-index: 0;
+}
+
+.tomillo-1 {
+    top: 55%;
+    left: 10%;
+
+}
+.tomillo-2 {
+    top: 10%;
+    right: 15%;
+    transform: scaleX(-1);
+}
+
+.tomillo-3 {
+    top: 50%;
+    right: 25rem;
+}
+
+.tomillo-4 {
+    top: 10%;
+    right: 0%;
+    transform: scaleX(-1);
+}
+
+.toronja-1 {
+    top: 20%;
+    left: 15%;
+}
+
+.toronja-2 {
+    top: 60%;
+    left: 45%;
+}
+
+.toronja-3 {
+    top: 10%;
+    left: -20%;
+    max-width: 50%;
+}
+
+.toronja-4 {
+    top: 60%;
+    left: 40%;
+    max-width: 50%;
+}
+
+.menta-1 {
+    top: 60%;
+    right: 90%;
+}
+
+.menta-2 {
+    top: 10%;
+    right: 2rem;
+}
+
+.menta-3 {
+    top: -5rem;
+    right: 20rem;
+}
+
+.limon-1 {
+    top: 20%;
+    right: 20rem;
+    z-index: 1;
+}
+
+.limon-2 {
+    top: 60%;
+    left: 10rem;
+}
+
+.anis-1 {
+    top: 20%;
+    left: 20rem;
+}
+
+.anis-2 {
+    top: 50%;
+    left: -5rem;
+    z-index: 2;
+}
+
+.naranja-1 {
+    top: 50%;
+    left: 10rem;
+}
+
+.naranja-2 {
+    top: 0%;
+    left: -2rem;
+}
+
+.vodka__naranja {
+    max-width: 100%;
+    right: -2rem;
+    top: -9rem;
+}
+
+.vodka__anis {
+    display: none;
+}
+
+.ginebra__tomillo {
+    display: none;
+}
+
+.ginebra__toronja {
+    max-width: 100%;
+    right: -2rem;
+    top: -12rem;
+}
+
+.tequila__limon {
+    right: -1rem;
+    top: -6rem;
+}
+
+/* ---------- Bloque de cócteles ---------- */
+.Main__img--principal {
+    display: none;
+    width: 50%;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.Main__img--principal img {
+    max-height: 90vh;
+}
+
+/* ----------ANIMACIONES---------- */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 120s ease infinite;
+}
+
+@keyframes rotateBt {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.botell__loop {
+    animation: rotateBt 20s ease-in-out infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animacion--scale {
+    animation: scale 20s ease-in-out infinite;
+}
+
+@keyframes scaleRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.scale__rotate {
+    animation: scaleRotate 50s ease-in-out infinite;
+}
+
+@keyframes scaleRotate2 {
+    0% {
+        transform: scale(1) rotate(180deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(170deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+
+.scale__rotate-2 {
+    animation: scaleRotate2 50s ease-in-out infinite;
+}
+
+/* ---------- FOOTER ---------- */
+
+/* Footer (menú desplegable) */
+
+.Footer {
+    position: sticky;
+    bottom: 0;
+}
+
+footer {
+    z-index: 1;
+}
+
+.Footer__nav {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 3.5rem;
+}
+
+.Footer__nav.isActive {
+    display: block;
+}
+
+.Footer__ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .2rem;
+}
+
+.Footer__li {
+    display: flex;
+    background-color: var(--negro);
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.Footer__li:hover {
+    background-color: var(--rojo);
+}
+
+.Footer__a img {
+    width: 1.5rem;
+}
+
+.Footer__a {
+    display: block;
+    padding: .2rem 0 0;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Footer (Contenido) */
+
+.Footer__contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--negro);
+    padding: 2% 5.5%;
+}
+
+.Footer__p {
+    font-family: Montserrat;
+    font-size: var(--textos-legales);
+    color: var(--gris);
+}
+
+.Footer__btn {
+    font-size: var(--h2);
+    color: var(--gris);
+    padding: 0;
+}
+
+.Footer__btn:hover {
+    color: var(--rojo);
+}
+
+.Footer__a--pag {
+    color: var(--gris);
+    text-decoration: none;
+}
+
+.Footer__a--pag:hover {
+    color: var(--rojo);
+}
+
+/* //////////////////////////////////////////// PÁGINAS RECETARIO //////////////////////////////////////////// */
+
+.Main__container__cocteles {
+    width: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 80vh;
+}
+
+.Main__img--coctel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.Main__img--coctel img {
+    max-height: 100vh;
+}
+
+.Main__img--deco {
+    position: absolute;
+    display: none;
+    max-width: 30%;
+}
+
+.Main__img--botella {
+    display: none;
+}
+
+.Img__deco {
+    position: absolute;
+    display: none;
+    max-width: 60%;
+}
+
+/* ---------- Estilos para el slide / interactivo JS ---------- */
+
+.Main__cocteles {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.Main__cocteles:first-child {
+    position: static;
+}
+
+.Main__cocteles.isVisible {
+    opacity: 1;
+}
+
+/* ---------- Botones ---------- */
+
+.btn__slide {
+    border: thin solid var(--negro);
+}
+
+.btn__slide:hover {
+    background-color: var(--negro);
+    color: var(--gris);
+}
+
+.btn__slide.isActive {
+    background-color: var(--negro);
+    color: var(--gris);
+}
+
+.A__btn {
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    background-color: transparent;
+    border: thin solid var(--negro);
+    padding-inline: 3em;
+    padding-block: .5em;
+}
+
+.A__btn:hover {
+    background-color: var(--negro);
+    color: var(--gris);
+}
+
+.resaltar {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* //////////////////////////////////////////// PÁGINAS DE CÓCTELES / RECETAS //////////////////////////////////////////// */
+
+.Body__recetas {
+    overflow-x: hidden;
+}
+
+.Main__article__coctel {
+    width: 90%;
+    text-align: center;
+}
+
+.Main__article__texto--cocteles {
+    position: relative;
+}
+
+.Main__h3 {
+    position: relative;
+    line-height: 1.5em;
+}
+
+.Main__recetas__container {
+    background-color: var(--gris);
+    width: 100%;
+    padding: 5% 5%;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem .7rem #26222246;
+}
+
+.Main__recetas__instrucciones {
+    border: thin solid var(--negro);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr;
+}
+
+.instrucciones__subtitulos {
+    position: relative;
+}
+
+.Main__recetas__instrucciones h3 {
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    color: var(--negro);
+    margin: .5rem 1rem;
+    letter-spacing: 0;
+    line-height: 2rem;
+}
+
+.instrucciones__subtitulos::after {
+    content: "";
+    width: 50%;
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    height: .0625rem;
+    background-color: var(--negro);
+}
+
+.Main__recetas__instrucciones__imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thin solid var(--negro);
+    border-style: hidden solid hidden hidden;
+    grid-row: 1 / span 4;
+    padding: 10%;
+}
+
+.Instrucciones__imagen {
+   max-width: 100%;
+}
+
+.Main__recetas__instrucciones__detalle {
+    border: thin solid var(--negro);
+    border-style: hidden hidden solid hidden;
+    padding: 0 .2rem 1rem;
+}
+
+.Ingredientes__ul {
+    list-style: disc;
+}
+
+.Main__recetas__intrucciones__decoracion {
+    padding: 0 .2rem 1rem;
+}
+
+.return__recetario {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+}
+
+.return__recetario a {
+    font-size: var(--textos-legales);
+    color: #2622224e;
+}
+
+.return__recetario a:hover {
+    color: var(--rojo);
+}
+
+/* ---------- Estilos para el slide / interactivo JS ---------- */
+.Main__slide__recetas {
+    position: relative;
+}
+
+.slide__recetas {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+
+.slide__recetas:first-child {
+    position: static;
+}
+
+.slide__recetas.isVisible {
+    opacity: 1;
+}
+
+.Main__recetas__espacio {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+/* ---------- Estilos para el botones / interactivo JS ---------- */
+
+.Recetas__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0 0 0 1rem;
+}
+
+.Recetas__btn--detalles {
+    background-color: var(--negro);
+    color: var(--gris);
+    border-radius: 1rem 1rem .2rem 0;
+    hyphens: auto;
+    line-height: 1.2rem;
+    position: relative;
+    right: 0;
+    padding: 1rem;
+}
+
+.Recetas__btn--detalles:hover {
+    background-color: var(--rojo);
+    color: var(--gris);
+}
+
+.Recetas__btn--detalles:hover::before {
+    content: "𒊹 ";
+    color: var(--gris);
+}
+
+.Recetas__btn--detalles.isActive {
+    right: 0;
+}
+
+.Recetas__btn--detalles.isActive::before {
+    content: "𒊹 ";
+    color: var(--rojo);
+}
+
+/* //////////////////////////////////////////// PÁGINAS DE NEWSLETTER / FORM //////////////////////////////////////////// */
+
+.Main__form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.Main__article__form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.Form__container {
+    background-color: var(--gris);
+    width: 90%;
+    padding: 10% 10%;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem .7rem #26222246;
+}
+
+.Form__container--inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input {
+    border: none;
+    min-height: 2em;
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+    color: var(--negro);
+    box-shadow: 0 .1rem .7rem #26222217;
+    padding: 0 2%;
+}
+
+.form__option {
+    border: none;
+    min-height: 2em;
+}
+
+.form__option:target {
+    background-color: var(--gris);
+}
+
+.input__require {
+    color: var(--rojo);
+}
+
+.form__cereza {
+    position: absolute;
+    top: -2rem;
+    left: 18rem;
+    max-width: 30%;
+}
+
+label {
+    font-family: Montserrat;
+    font-size: .9rem;
+    color: var(--negro);
+    margin: 5% 0 2%;
+}
+
+.label__aviso {
+    font-size: 0.8rem;
+}
+
+.form__submit {
+    margin: 8% 0 0;
+    width: 40%;
+    border: none;
+    background-color: var(--negro);
+    padding: 3%;
+    color: var(--gris);
+    font-family: Montserrat;
+    font-size: var(--parrafo);
+}
+
+/* //////////////////////////////////////////// PÁGINA DE AGRADECIMIENTOS //////////////////////////////////////////// */
+
+.Body__aviso {
+    background-image: url(../assets/img/eucalipto.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 60%;
+}
+
+.Main__avisos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10% 10% 8%;
+    align-items: center;
+    width: 80%;
+}
+
+.Main__avisos h3 {
+    line-height: 4rem;
+}
+
+.Main__p__avisos {
+    line-height: 1.5rem;
+    margin: 3rem 0 3rem;
+}
+
+.Menu__simple__container {
+    display: flex;
+    width: 100%;
+}
+
+.Menu__simple__ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
+
+.Menu__simple__ul a {
+    color: #2622224e;
+}
+
+.Menu__simple__ul a:hover {
+    color: var(--rojo);
+}
+
+/* //////////////////////////////////////////// M E D I A - Q U E R Y //////////////////////////////////////////// */
+
+/* ////////////////////////////Tablets//////////////////////////// */
+@media (min-width: 768px) and (max-width:1079px) {
+
+    body {
+        background: var(--fondo);
+    }
+
+    h1 {
+        line-height: 5rem;
+    }
+
+    /* ---------- Main tablets ---------- */
+
+    .Main__h1::after {
+        top: 8%;
+        right: 0;
+        left: 80%;
+    }
+
+    .Main__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Main__p {
+        width: 60%;
+        margin: 2% 0 2%;
+    }
+
+    /* ---------- PÁGINAS DE CÓCTELES / RECETAS ---------- */
+
+    .Main__article__coctel {
+        width: 20%;
+    }
+
+    .bolita::after {
+        content: "𒊹";
+        position: absolute;
+        top: 7%;
+        right: 3rem;
+        color: var(--rojo);
+        z-index: -1;
+        font-size: 5rem;
+    }
+
+    .Main__recetas__espacio {
+        flex-wrap: nowrap;
+    }
+
+    .instrucciones__subtitulos::after {
+        content: "";
+        width: 50%;
+        position: absolute;
+        top: 1.9rem;
+        left: 0;
+        height: .0625rem;
+        background-color: var(--negro);
+    }
+
+    .Recetas__btns {
+        flex-direction: column;
+        margin: 5% 0 0;
+    }
+
+    .Recetas__btn--detalles {
+        border-radius: 2rem 0 0 2rem;
+        position: relative;
+        right: -2rem;
+        padding: 1rem 3rem 1rem 1rem;
+    }
+
+    .vodka__anis {
+        display: none;
+    }
+
+    .vodka__toronja {
+        max-width: 100%;
+        right: -2rem;
+        top: -8rem;
+    }
+
+    .tequila__menta {
+        display: none;
+    }
+
+    .tequila__limon {
+        right: -1rem;
+        top: -4rem;
+    }
+
+
+    .Main__article__texto--cocteles h3 {
+        margin: -1rem;
+    }
+
+    .espacio--positivo--doble {
+        padding: 0 0 0 6rem;
+        margin: -.5rem 0 0;
+    }
+
+
+
+    /* avisos */
+
+    .Main__avisos h3 {
+        line-height: 7rem;
+    }
+
+    /* ----------------- PÁGINA -> NEWSLETTER - FORM ----------------- */
+
+    .Body__form {
+        overflow: auto;
+    }
+
+    .Main__article__form p {
+        width: 90%;
+    }
+
+    .form__cereza {
+        top: -5rem;
+        left: 0;
+        max-width: 50%;
+    }
+
+    .Form__container {
+        width: 80%;
+        padding: 3% 6%;
+        margin: 5%;
+    }
+
+    .Footer {
+        position: relative;
+    }
+
+    .Main__h1--bolita__news::after {
+        content: "𒊹";
+        position: absolute;
+        top: 10%;
+        left: 80%;
+        color: var(--rojo);
+        z-index: -1;
+        font-size: 4rem;
+    }
+
+}
+
+/* ////////////////////////////Desktop//////////////////////////// */
+
+@media screen and (min-width: 1080px) {
+
+    body {
+        background: var(--fondo);
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 5vw 1fr;
+
+    }
+
+    h1 {
+        text-wrap: balance;
+        line-height: 6rem;
+    }
+
+
+    h2 {
+        margin: -.8rem 0 0;
+    }
+
+    /* ---------- Header ---------- */
+
+    .Header {
+        background-color: var(--negro);
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 2rem 0;
+        grid-row: 1 / span 3;
+    }
+
+    .Header__nav {
+        display: flex;
+    }
+
+    .Header__ul {
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .Header__img {
+        content: url('../assets/icons/macondo-logo-blanco.svg');
+        margin: 5% auto;
+    }
+
+
+
+
+
+
+
+    .color__svg {
+        fill: var(--gris);
+    }
+
+    .color__svg:hover {
+        fill: var(--rojo);
+    }
+
+
+    /* ---------- Main ---------- */
+
+
+    .Main {
+        grid-column: 2 / span 3;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5% 5% 0 8%;
+    }
+
+    .Main__article {
+        width: 40%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .Main__h1::after {
+        top: 5%;
+        right: 0;
+        left: 28rem;
+    }
+
+
+    .Main__h1--recetario::after {
+        top: 5%;
+        right: 5rem;
+
+    }
+
+    .espacio--negativo {
+        margin: 0 0 0 -3rem;
+    }
+
+    .Main__btns {
+        display: flex;
+        gap: 2%;
+    }
+
+    .Main__img {
+        display: none;
+    }
+
+    .Main__img--principal {
+        display: flex;
+    }
+
+    .Main__img--botella img {
+        max-width: 90%;
+    }
+
+    .Main__img--botella {
+        position: relative;
+        z-index: 1;
+        display: flex;
+    }
+
+
+
+    .Main__img--coctel {
+        flex-direction: row;
+    }
+
+
+    /* Solo es una línea decorativa */
+
+    .Main__line {
+        height: 30rem;
+        width: .15rem;
+        background-color: var(--negro);
+        position: absolute;
+        top: 0;
+        right: 4rem;
+    }
+
+    .Main__img--deco {
+        display: flex;
+    }
+
+    .Img__deco {
+        display: flex;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .Footer {
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
+        grid-column: 2 / span 3;
+        justify-content: flex-end;
+    }
+
+    .Footer__contenido {
+        background: transparent;
+        padding: 1rem 2rem;
+
+    }
+
+    .Footer__p,
+    .Footer__p a {
+        color: var(--negro);
+    }
+
+    .Footer__btn {
+        display: none;
+    }
+
+    /* ----------------- PÁGINA -> NEWSLETTER - FORM ----------------- */
+
+    .Main__form {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+    }
+
+    .Main__article__form {
+        width: 40%;
+        text-align: left;
+        align-items: flex-start;
+
+    }
+
+    .form__cereza {
+        top: -5rem;
+        left: 0;
+        max-width: 50%;
+    }
+
+    .Form__container {
+        width: 70%;
+        padding: 15% 10%;
+    }
+
+    .label__aviso {
+        font-size: var(--textos-legales);
+    }
+
+    label {
+        font-size: var(--parrafo);
+    }
+
+    .Main__h1--bolita__news::after {
+        content: "𒊹";
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        color: var(--rojo);
+        z-index: -1;
+        font-size: 5rem;
+    }
+
+    /* ---------- PÁGINAS DE CÓCTELES / RECETAS ---------- */
+
+    .Main__article__coctel {
+        width: 20%;
+    }
+
+    .Main__article__texto--cocteles h3 {
+        margin: -1rem;
+    }
+
+    .bolita::after {
+        content: "𒊹";
+        position: absolute;
+        top: 7%;
+        right: -5rem;
+        color: var(--rojo);
+        z-index: -1;
+        font-size: 5rem;
+    }
+
+    .Main__recetas__espacio {
+        width: 60%;
+        flex-wrap: nowrap;
+    }
+
+    .instrucciones__subtitulos::after {
+        content: "";
+        width: 50%;
+        position: absolute;
+        top: 1.9rem;
+        left: 0;
+        height: .0625rem;
+        background-color: var(--negro);
+    }
+
+    .Recetas__btns {
+        flex-direction: column;
+        margin: 5% 0 0;
+    }
+
+    .Recetas__btn--detalles {
+        border-radius: 2rem 0 0 2rem;
+        position: relative;
+        right: -2rem;
+        padding: 1rem 3rem 1rem 1rem;
+    }
+
+    .vodka__naranja {
+        right: 5rem;
+        top: 65%;
+    }
+
+    .vodka__anis {
+        display: block;
+        left: 10%;
+        top: 5%;
+    }
+
+    .ginebra__tomillo {
+        display: block;
+        left: 4rem;
+        bottom: -2rem;
+    }
+
+    .ginebra__toronja {
+        max-width: 100%;
+        right: 6rem;
+        top: 6rem;
+    }
+
+    .tequila__menta {
+        display: block;
+        left: 9%;
+        top: 4rem;
+    }
+
+    .tequila__limon {
+        right: 5%;
+        top: 70%;
+        z-index: 2;
+
+    }
+
+    .espacio--positivo--doble {
+        padding: 0 0 0 10rem;
+        margin: -.5rem 0 0;
+    }
+
+    /* ---------- PÁGINA DE AGRADECIMIENTOS --------- */
+
+    .Main__avisos {
+        width: 40%;
+    }
+
+    .Main__avisos h3 {
+        line-height: 8rem;
+    }
+
+    .Menu__simple__ul {
+        flex-wrap: nowrap;
+        gap: 3rem;
+    }
+
+}
